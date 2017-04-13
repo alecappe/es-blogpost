@@ -25,6 +25,7 @@ def index():
         sql = ''' insert into posts(title, data, post)
                 values(?,?,?)'''
         c.execute(sql,params)
+        conn.commit()
         return '',201
 
 if __name__ == '__main__':
