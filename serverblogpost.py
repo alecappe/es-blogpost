@@ -15,6 +15,17 @@ def index():
         sql = 'SELECT * FROM posts'
         ctx = {'posts': c.execute(sql)}
         return render_template('index.html', **ctx)
-    
+
+    elif request.method == 'POST':
+        params = [
+            request.form['title'],
+            request.form['data'],
+            request.form['post']
+        ]
+        sql = ''' insert into posts(title, data, post)
+                values(?,?,?)'''
+        c.execute(sql,params)
+        return '',201
+
 if __name__ == '__main__':
     app.run(debug=True)
