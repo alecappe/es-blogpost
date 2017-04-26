@@ -1,0 +1,27 @@
+h1{
+  font-size: 3em;
+  text-align: center;
+  background-color: red;
+  color: white;
+  height: 10vh;
+}
+article h2{
+  font-size: 2em;
+  padding: 0.2em;
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
+h3{
+  font-size: 1em;
+  text-align: right;
+}
+.main{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+article{
+	margin: 1em;
+	width: 40%;
+}
