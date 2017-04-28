@@ -47,7 +47,12 @@ class Blogpost(Resource):
 
         Posts.create(title=args['title'], post=args['post'])
 
-        return '', CREATED
+        post_list = []
+        db_blog = Posts.select()
+        for post in db_blog:
+            post_list.append({'title': post.title, 'post': post.post})
+
+        return post_list, CREATED
 
 @app.route('/')
 def get():
